@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: apod-ingress
+spec:
+  rules:
+    - host: astronomia.com
+      http:
+        paths:
+            - path: /apod
+              backend:
+               serviceName: apod-service
+               servicePort: 8081

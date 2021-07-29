@@ -30,6 +30,7 @@ type NasaData struct {
 // function that will serve file if exist or download it if not
 func (ctx *NasaContext) GetData(w http.ResponseWriter, r *http.Request) {
 
+	fmt.Printf("action start at %s", r.URL.String())
 	fileName := time.Now().Format("2006-01-02")
 	b, err := ioutil.ReadFile(filepath.Clean(fileName))
 	if err != nil {
@@ -46,6 +47,7 @@ func (ctx *NasaContext) GetData(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		_, _ = w.Write(b)
 	}
+	fmt.Printf("action end")
 
 }
 

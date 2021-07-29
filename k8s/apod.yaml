@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apod
+  labels:
+    app: apod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apod
+  template:
+    metadata:
+      labels:
+        app: apod
+    spec:
+      containers:
+        - name: apod
+          image: florian74/apod:latest
+          command:
+            - 'gorillaz'
+            - 'fpU0kvmphwtCEPIoaEtsTyDa2x3ohuuJ3j09tXIB'
+          ports:
+            - containerPort: 8081

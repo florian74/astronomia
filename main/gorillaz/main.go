@@ -12,7 +12,7 @@ func main() {
 	context := &nasa.NasaContext{ApiKey: os.Args[1]}
 
 	server := gorrilaz.New()
-	server.Router.PathPrefix("/apod").Handler(http.HandlerFunc(context.GetData))
+	server.Router.PathPrefix("/apod").Handler(http.HandlerFunc(context.GetData)).Methods("GET")
 
 	<-server.Run()
 	server.SetReady(true)
