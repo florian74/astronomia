@@ -1,0 +1,9 @@
+# Contents of htpasswd.yaml
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: password
+  namespace: default
+data:
+    auth: YWRtaW46JGFwcjEkV2xURi53eHEkNy9Bc25QNkJOLzNMelRWZFhhdlgxMQ==
