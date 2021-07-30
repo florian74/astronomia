@@ -4,7 +4,7 @@ metadata:
   name: apod-service
 spec:
   ports:
-    - port: 8081
+    - port: 80
       name: apod-http
       targetPort: 8081
       protocol: TCP

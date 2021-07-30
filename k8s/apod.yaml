@@ -1,8 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apod
+  name: apod-deployment
+  app: apod
   labels:
+    name: apod-deployment
     app: apod
 spec:
   replicas: 1
@@ -15,7 +17,7 @@ spec:
         app: apod
     spec:
       containers:
-        - name: apod
+        - name: apod-image
           image: florian74/apod:latest
           command:
             - 'gorillaz'

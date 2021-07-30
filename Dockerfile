@@ -21,6 +21,7 @@ COPY ./main/gorillaz/configs /go/src/astronomia/configs
 RUN ["chmod", "+x", "/go/bin/manual"]
 RUN ["chmod", "+x", "/go/bin/gorillaz"]
 
+EXPOSE 8081
 
 ENTRYPOINT ["gorillaz"]
 
